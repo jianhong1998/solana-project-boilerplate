@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/solbay.json`.
  */
 export type Solbay = {
-  "address": "coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF",
+  "address": "EXMi6f7SEVuEZjVm4AK58QFBgisZVX8XcxJKEWwA3Hok",
   "metadata": {
     "name": "solbay",
     "version": "0.1.0",

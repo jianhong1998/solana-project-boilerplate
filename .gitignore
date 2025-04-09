@@ -40,7 +40,7 @@ temp
 dist
 postgres-data
 solana-ledger
-
+keypairs
 
 .anchor
 anchor/target/*

@@ -16,6 +16,7 @@ node_modules
 # misc
 .DS_Store
 *.pem
+!ap-southeast-1-bundle.pem
 
 # debug
 npm-debug.log*
@@ -32,12 +33,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Temporary / generated folder
 tmp
 temp
 dist
-
-
+postgres-data
 solana-ledger
+
+
 .anchor
 anchor/target/*
 !anchor/target/idl

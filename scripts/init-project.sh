@@ -7,5 +7,5 @@ echo "Installing packages..."
 make install
 
 # Generate keypairs for local env
-solana-keygen new -o ./temp/keypairs/fee-payer.json
-solana-keygen new -o ./temp/keypairs/program-owner.json
+solana-keygen new -s --no-bip39-passphrase -o ./temp/keypairs/fee-payer.json
+solana-keygen new -s --no-bip39-passphrase -o ./temp/keypairs/program-owner.json

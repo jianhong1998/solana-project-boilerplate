@@ -64,9 +64,12 @@ airdrop/fee-payer:
 install:
 	@rm -rf ./client/node_modules
 	@rm -rf ./anchor/node_modules
+	@rm -rf ./server/node_modules
 	@cd client && \
 		npm i
 	@cd anchor && \
+		npm i
+	@cd server && \
 		npm i
 
 init:

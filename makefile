@@ -23,8 +23,7 @@ down/clean:
 		$(MAKE) clean-image
 
 clean:
-	@rm -rf ./solana-ledger && \
-		rm -rf ./.next
+	@rm -rf ./solana-ledger ./client/.next ./postgres-data ./temp
 
 clean-image:
 	@docker image prune -f
@@ -56,17 +55,20 @@ deploy/with-airdrop:
 		$(MAKE) deploy
 
 airdrop/program-owner:
-	@solana airdrop 10 -k ./temp/keypairs/program-owner.json
+	@solana airdrop 10 -k ./keypairs/program-owner.json
 
 airdrop/fee-payer:
-	@solana airdrop 10 -k ./temp/keypairs/fee-payer.json
+	@solana airdrop 10 -k ./keypairs/fee-payer.json
 
 install:
 	@rm -rf ./client/node_modules
 	@rm -rf ./anchor/node_modules
+	@rm -rf ./server/node_modules
 	@cd client && \
 		npm i
 	@cd anchor && \
+		npm i
+	@cd server && \
 		npm i
 
 init:

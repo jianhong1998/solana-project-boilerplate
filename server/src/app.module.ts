@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { AuthGuardService } from './auth/services/auth-guard.service';
 import { CommonModule } from './common/common.module';
 import { UserModule } from './user/user.module';
+import { ExampleModule } from './example/example.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { UserModule } from './user/user.module';
     CommonModule,
     AuthModule,
     UserModule,
+    ExampleModule,
   ],
   controllers: [AppController],
   providers: [

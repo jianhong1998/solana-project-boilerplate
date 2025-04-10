@@ -22,10 +22,10 @@ services:
     network_mode: host
     develop:
       watch:
-        - path: ./src
+        - path: ./client/src
           target: /apps/crud-dapp/src
           action: sync
-        - path: ./package.json
+        - path: ./client/package.json
           action: rebuild
 
   server:
@@ -41,12 +41,12 @@ services:
         restart: true
     develop:
       watch:
-        - path: ./src
+        - path: ./server/src
           target: /apps/server/src
-          action: sync
-        - path: ./package.json
+          action: sync+restart
+        - path: ./server/package.json
           action: rebuild
-        - path: ./package-lock.json
+        - path: ./server/package-lock.json
           action: rebuild
 
   postgres:

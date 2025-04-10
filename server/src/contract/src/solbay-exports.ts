@@ -25,12 +25,13 @@ export function getSolbayProgram(
 }
 
 // This is a helper function to get the program ID for the Solbay program depending on the cluster.
-export function getSolbayProgramId(cluster: Cluster) {
+export function getSolbayProgramId(cluster: Cluster | 'localnet') {
   switch (cluster) {
     case 'devnet':
     case 'testnet':
+    case 'localnet':
       // This is the program ID for the Solbay program on devnet and testnet.
-      return new PublicKey('coUnmi3oBUtwtd9fjeAvSsJssXh5A5xyPbhpewyzRVF');
+      return SOLBAY_PROGRAM_ID;
     case 'mainnet-beta':
     default:
       return SOLBAY_PROGRAM_ID;

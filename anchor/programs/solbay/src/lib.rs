@@ -1,5 +1,6 @@
 #![allow(clippy::result_large_err)]
 
+mod constants;
 mod instructions;
 mod states;
 

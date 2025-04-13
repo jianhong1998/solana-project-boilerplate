@@ -92,6 +92,10 @@ export type Solbay = {
       ],
       "accounts": [
         {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        },
+        {
           "name": "payer",
           "writable": true,
           "signer": true
@@ -100,10 +104,6 @@ export type Solbay = {
           "name": "solbay",
           "writable": true,
           "signer": true
-        },
-        {
-          "name": "systemProgram",
-          "address": "11111111111111111111111111111111"
         }
       ],
       "args": []

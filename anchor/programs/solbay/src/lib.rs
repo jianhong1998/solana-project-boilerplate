@@ -1,12 +1,18 @@
 #![allow(clippy::result_large_err)]
 
-use anchor_lang::prelude::*;
+mod instructions;
+mod states;
 
-declare_id!("EXMi6f7SEVuEZjVm4AK58QFBgisZVX8XcxJKEWwA3Hok");
+use anchor_lang::prelude::*;
+pub use instructions::*;
+pub use states::*;
+
+declare_id!("HpQzp1EDgMZ6fi93e5jpxeH4XoTmWzxB4PtsZnzjgQZK");
 
 #[program]
 pub mod solbay {
-    use super::*;
+
+  use super::*;
 
   pub fn close(_ctx: Context<CloseSolbay>) -> Result<()> {
     Ok(())
@@ -30,41 +36,4 @@ pub mod solbay {
     ctx.accounts.solbay.count = value.clone();
     Ok(())
   }
-}
-
-#[derive(Accounts)]
-pub struct InitializeSolbay<'info> {
-  #[account(mut)]
-  pub payer: Signer<'info>,
-
-  #[account(
-  init,
-  space = 8 + Solbay::INIT_SPACE,
-  payer = payer
-  )]
-  pub solbay: Account<'info, Solbay>,
-  pub system_program: Program<'info, System>,
-}
-#[derive(Accounts)]
-pub struct CloseSolbay<'info> {
-  #[account(mut)]
-  pub payer: Signer<'info>,
-
-  #[account(
-  mut,
-  close = payer, // close account and return lamports to payer
-  )]
-  pub solbay: Account<'info, Solbay>,
-}
-
-#[derive(Accounts)]
-pub struct Update<'info> {
-  #[account(mut)]
-  pub solbay: Account<'info, Solbay>,
-}
-
-#[account]
-#[derive(InitSpace)]
-pub struct Solbay {
-  count: u8,
 }

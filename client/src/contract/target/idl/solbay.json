@@ -1,5 +1,5 @@
 {
-  "address": "EXMi6f7SEVuEZjVm4AK58QFBgisZVX8XcxJKEWwA3Hok",
+  "address": "HpQzp1EDgMZ6fi93e5jpxeH4XoTmWzxB4PtsZnzjgQZK",
   "metadata": {
     "name": "solbay",
     "version": "0.1.0",
@@ -86,6 +86,10 @@
       ],
       "accounts": [
         {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
           "name": "payer",
           "writable": true,
           "signer": true
@@ -94,10 +98,6 @@
           "name": "solbay",
           "writable": true,
           "signer": true
-        },
-        {
-          "name": "system_program",
-          "address": "11111111111111111111111111111111"
         }
       ],
       "args": []
